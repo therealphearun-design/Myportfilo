@@ -569,7 +569,27 @@ section {
 .projects-section {
     background: var(--darker-bg);
 }
+/* Fix for the 2-column grid alignment */
+.projects-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.project-card {
+    height: 100%; /* Makes all cards in a row the same height */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-description {
+    flex-grow: 1; /* Pushes the 'View Project' link to the bottom */
+}
+
+/* Allow interaction with links even on coming-soon if you remove the pointer-events none */
+.project-card.coming-soon {
+    opacity: 0.6;
+    /* Optional: filter: grayscale(1); Makes them look truly "inactive" */
+}
 /* Project Cards Integration with Existing Theme */
 .project-card {
     background: var(--card-bg);
@@ -856,3 +876,4 @@ section {
     }
 
 }
+
